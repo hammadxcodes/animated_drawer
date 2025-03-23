@@ -748,27 +748,27 @@ class _HomeScreenState extends State<HomeScreen> {
         },
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.pie_chart_outline_rounded),
-            selectedIcon: Icon(Icons.pie_chart_rounded),
+            icon: Icon(IconlyLight.chart),
+            selectedIcon: Icon(IconlyBold.chart),
             label: 'Portfolio',
           ),
           NavigationDestination(
-            icon: Icon(Icons.trending_up_outlined),
-            selectedIcon: Icon(Icons.trending_up_rounded),
+            icon: Icon(IconlyLight.graph),
+            selectedIcon: Icon(IconlyBold.graph),
             label: 'Market',
           ),
           NavigationDestination(
-            icon: Icon(Icons.swap_horiz_outlined),
-            selectedIcon: Icon(Icons.swap_horiz_rounded),
+            icon: Icon(IconlyLight.swap),
+            selectedIcon: Icon(IconlyBold.swap),
             label: 'Trade',
           ),
           NavigationDestination(
-            icon: Icon(Icons.newspaper_outlined),
+            icon: Icon(IconlyLight.paper),
             selectedIcon: Icon(IconlyBold.paper),
             label: 'News',
           ),
           NavigationDestination(
-            icon: Icon(Icons.settings_outlined),
+            icon: Icon(IconlyLight.setting),
             selectedIcon: Icon(IconlyBold.setting),
             label: 'Settings',
           ),
