@@ -573,7 +573,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                               _buildGlassActionButton(
                                 "Withdraw",
-                                Icons.arrow_upward_rounded,
+                                IconlyBold.arrow_up_2,
                                 Colors.white,
                               ),
                               _buildGlassActionButton(
