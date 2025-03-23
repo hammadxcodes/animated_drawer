@@ -146,102 +146,62 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 8),
+        padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: IconButton(
-                    onPressed: () => zoomDrawerController.toggle?.call(),
-                    icon: Icon(
-                      IconlyBold.close_square,
-                      color: colorScheme.onSurface,
-                      size: 28,
-                    ),
-                    style: IconButton.styleFrom(
-                      backgroundColor:
-                          isDark
-                              ? colorScheme.surfaceVariant
-                              : colorScheme.primaryContainer.withOpacity(0.3),
-                      padding: const EdgeInsets.all(8),
-                    ),
+            // Header Card with Profile Picture and Email
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: isDark ? colorScheme.surface : Colors.white,
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.05),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
                   ),
-                ),
-                Text(
-                  "Menu",
-                  style: textTheme.titleLarge?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: colorScheme.onSurface,
-                  ),
-                ),
-                const SizedBox(width: 50),
-              ],
-            ),
-            const SizedBox(height: 32),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                ],
+              ),
+              child: Row(
                 children: [
-                  // Profile section
-                  Container(
-                    padding: const EdgeInsets.all(24),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [
-                          colorScheme.primary,
-                          colorScheme.primary.withOpacity(0.7),
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
+                  // Profile Picture
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundColor: colorScheme.primary,
+                    child: Icon(
+                      Icons.person_rounded,
+                      size: 30,
+                      color: colorScheme.onPrimary,
+                    ),
+                  ),
+                  const SizedBox(width: 16),
+                  // Email and Name
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "Your Name", // Replace with your name
+                        style: textTheme.titleMedium?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: colorScheme.onSurface,
+                        ),
                       ),
-                      borderRadius: BorderRadius.circular(24),
-                    ),
-                    child: Row(
-                      children: [
-                        CircleAvatar(
-                          radius: 32,
-                          backgroundColor: Colors.white.withOpacity(0.2),
-                          child: Text(
-                            "HA",
-                            style: textTheme.titleLarge?.copyWith(
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
+                      Text(
+                        "your.email@example.com", // Replace with your email
+                        style: textTheme.bodyMedium?.copyWith(
+                          color: colorScheme.onSurfaceVariant,
                         ),
-                        const SizedBox(width: 16),
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Hammad Ali",
-                                style: textTheme.titleMedium?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                ),
-                              ),
-                              Text(
-                                "hammad.ali@example.com",
-                                style: textTheme.bodySmall?.copyWith(
-                                  color: Colors.white.withOpacity(0.8),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ],
               ),
             ),
             const SizedBox(height: 32),
+
             // Menu items
             _buildMenuItem(context, "Portfolio", IconlyBold.chart, 0),
             _buildMenuItem(context, "Market", IconlyBold.graph, 1),
