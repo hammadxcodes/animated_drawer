@@ -112,10 +112,14 @@ class _HomeScreenState extends State<HomeScreen> {
                   CircleAvatar(
                     radius: 30,
                     backgroundColor: colorScheme.primary,
-                    child: Icon(
-                      Icons.person_rounded,
-                      size: 30,
-                      color: colorScheme.onPrimary,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(30),
+                      child: Image.network(
+                        'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfHx8MA%3D%3D',
+                        fit: BoxFit.cover,
+                        width: 60,
+                        height: 60,
+                      ),
                     ),
                   ),
                   const SizedBox(width: 16),
