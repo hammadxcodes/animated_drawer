@@ -1,3 +1,4 @@
+import 'package:animated_drawer/screens/home_screen_2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -61,7 +62,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       themeMode: ThemeMode.dark,
-      home: const HomeScreen(),
+      home: const HomeScreen2(),
     );
   }
 }
