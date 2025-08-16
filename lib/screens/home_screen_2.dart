@@ -19,41 +19,6 @@ class _HomeScreen2State extends State<HomeScreen2>
   late KFDrawerController _drawerController;
   int _selectedIndex = 0;
 
-  final List<CryptoAsset> _cryptoAssets = [
-    CryptoAsset(
-      name: "Bitcoin",
-      symbol: "BTC",
-      price: 51275.80,
-      change: 2.4,
-      holdings: 0.45,
-      color: const Color(0xFFF7931A),
-    ),
-    CryptoAsset(
-      name: "Ethereum",
-      symbol: "ETH",
-      price: 2835.65,
-      change: -1.2,
-      holdings: 4.75,
-      color: const Color(0xFF627EEA),
-    ),
-    CryptoAsset(
-      name: "Solana",
-      symbol: "SOL",
-      price: 142.20,
-      change: 5.7,
-      holdings: 28.5,
-      color: const Color(0xFF00FFA3),
-    ),
-    CryptoAsset(
-      name: "Cardano",
-      symbol: "ADA",
-      price: 0.58,
-      change: 1.8,
-      holdings: 1250.0,
-      color: const Color(0xFF0033AD),
-    ),
-  ];
-
   @override
   void initState() {
     super.initState();
