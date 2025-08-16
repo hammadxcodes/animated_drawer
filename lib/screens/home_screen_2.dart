@@ -59,36 +59,36 @@ class _HomeScreen2State extends State<HomeScreen2>
     super.initState();
     _drawerController = KFDrawerController(
       initialPage: const MainScreen(),
-      items: [
-        KFDrawerItem.initWithPage(
-          text: const Text('Portfolio', style: TextStyle(color: Colors.white)),
-          icon: const Icon(IconlyBold.chart, color: Colors.white),
-          page: const MainScreen(),
-        ),
-        KFDrawerItem.initWithPage(
-          text: const Text('Market', style: TextStyle(color: Colors.white)),
-          icon: const Icon(IconlyBold.graph, color: Colors.white),
-          page: const MainScreen(), // Placeholder
-        ),
-        KFDrawerItem.initWithPage(
-          text: const Text(
-            'Transactions',
-            style: TextStyle(color: Colors.white),
-          ),
-          icon: const Icon(IconlyBold.swap, color: Colors.white),
-          page: const MainScreen(), // Placeholder
-        ),
-        KFDrawerItem.initWithPage(
-          text: const Text('News', style: TextStyle(color: Colors.white)),
-          icon: const Icon(IconlyBold.paper, color: Colors.white),
-          page: const MainScreen(), // Placeholder
-        ),
-        KFDrawerItem.initWithPage(
-          text: const Text('Settings', style: TextStyle(color: Colors.white)),
-          icon: const Icon(IconlyBold.setting, color: Colors.white),
-          page: const MainScreen(), // Placeholder
-        ),
-      ],
+      // items: [
+      //   KFDrawerItem.initWithPage(
+      //     text: const Text('Portfolio', style: TextStyle(color: Colors.white)),
+      //     icon: const Icon(IconlyBold.chart, color: Colors.white),
+      //     page: const MainScreen(),
+      //   ),
+      //   KFDrawerItem.initWithPage(
+      //     text: const Text('Market', style: TextStyle(color: Colors.white)),
+      //     icon: const Icon(IconlyBold.graph, color: Colors.white),
+      //     page: const MainScreen(), // Placeholder
+      //   ),
+      //   KFDrawerItem.initWithPage(
+      //     text: const Text(
+      //       'Transactions',
+      //       style: TextStyle(color: Colors.white),
+      //     ),
+      //     icon: const Icon(IconlyBold.swap, color: Colors.white),
+      //     page: const MainScreen(), // Placeholder
+      //   ),
+      //   KFDrawerItem.initWithPage(
+      //     text: const Text('News', style: TextStyle(color: Colors.white)),
+      //     icon: const Icon(IconlyBold.paper, color: Colors.white),
+      //     page: const MainScreen(), // Placeholder
+      //   ),
+      //   KFDrawerItem.initWithPage(
+      //     text: const Text('Settings', style: TextStyle(color: Colors.white)),
+      //     icon: const Icon(IconlyBold.setting, color: Colors.white),
+      //     page: const MainScreen(), // Placeholder
+      //   ),
+      // ],
     );
   }
 
@@ -103,68 +103,177 @@ class _HomeScreen2State extends State<HomeScreen2>
         header: Align(
           alignment: Alignment.centerLeft,
           child: Container(
-            padding: const EdgeInsets.all(16.0),
-            width: MediaQuery.of(context).size.width * 0.6,
-            decoration: BoxDecoration(
-              color: isDark ? colorScheme.surface : Colors.white,
-              borderRadius: BorderRadius.circular(16),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.05),
-                  blurRadius: 10,
-                  offset: const Offset(0, 4),
-                ),
-              ],
-            ),
-            child: Row(
+            width: MediaQuery.of(context).size.width * 0.8,
+            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
-                  radius: 30,
-                  backgroundColor: colorScheme.primary,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(30),
-                    child: Image.network(
-                      'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfHx8MA%3D%3D',
-                      fit: BoxFit.cover,
-                      width: 60,
-                      height: 60,
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Hammad Ali",
-                        style: Theme.of(
-                          context,
-                        ).textTheme.titleMedium?.copyWith(
-                          fontWeight: FontWeight.bold,
-                          color: colorScheme.onSurface,
-                        ),
-                      ),
-                      Text(
-                        "hammadaali.dev@gmail.com",
-                        style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color: colorScheme.onSurfaceVariant,
-                        ),
-                        overflow: TextOverflow.ellipsis,
+                // Profile Card
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: isDark ? colorScheme.surface : Colors.white,
+                    borderRadius: BorderRadius.circular(16),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black.withOpacity(0.05),
+                        blurRadius: 10,
+                        offset: const Offset(0, 4),
                       ),
                     ],
                   ),
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        radius: 30,
+                        backgroundColor: colorScheme.primary,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(30),
+                          child: Image.network(
+                            'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fG1hbnxlbnwwfHwwfHx8MA%3D%3D',
+                            fit: BoxFit.cover,
+                            width: 60,
+                            height: 60,
+                          ),
+                        ),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Hammad Ali",
+                              style: Theme.of(
+                                context,
+                              ).textTheme.titleMedium?.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: colorScheme.onSurface,
+                              ),
+                            ),
+                            Text(
+                              "hammad_codes",
+                              style: Theme.of(
+                                context,
+                              ).textTheme.bodyMedium?.copyWith(
+                                color: colorScheme.onSurfaceVariant,
+                              ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 32),
+                // Menu Items
+                MenuItem(
+                  title: "Portfolio",
+                  icon: IconlyBold.chart,
+                  isSelected: _selectedIndex == 0,
+                  onTap: () {
+                    setState(() {
+                      _selectedIndex = 0;
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen2(),
+                        ),
+                      );
+                    });
+                  },
+                ),
+                MenuItem(
+                  title: "Market",
+                  icon: IconlyBold.graph,
+                  isSelected: _selectedIndex == 1,
+                  onTap: () {
+                    setState(() {
+                      _selectedIndex = 1;
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen2(),
+                        ), // Placeholder
+                      );
+                    });
+                  },
+                ),
+                MenuItem(
+                  title: "Transactions",
+                  icon: IconlyBold.swap,
+                  isSelected: _selectedIndex == 2,
+                  onTap: () {
+                    setState(() {
+                      _selectedIndex = 2;
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen2(),
+                        ), // Placeholder
+                      );
+                    });
+                  },
+                ),
+                MenuItem(
+                  title: "News",
+                  icon: IconlyBold.paper,
+                  isSelected: _selectedIndex == 3,
+                  onTap: () {
+                    setState(() {
+                      _selectedIndex = 3;
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen2(),
+                        ), // Placeholder
+                      );
+                    });
+                  },
+                ),
+                MenuItem(
+                  title: "Settings",
+                  icon: IconlyBold.setting,
+                  isSelected: _selectedIndex == 4,
+                  onTap: () {
+                    setState(() {
+                      _selectedIndex = 4;
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen2(),
+                        ), // Placeholder
+                      );
+                    });
+                  },
                 ),
               ],
             ),
           ),
         ),
-        footer: KFDrawerItem(
-          text: const Text('Log out', style: TextStyle(color: Colors.white)),
-          icon: const Icon(Icons.logout_rounded, color: Colors.white),
-          onPressed: () {
-            // Handle logout logic
-          },
+        footer: Padding(
+          padding: const EdgeInsets.all(16),
+          child: ElevatedButton.icon(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
+              backgroundColor: colorScheme.errorContainer,
+              foregroundColor: colorScheme.error,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16),
+              ),
+              elevation: 0,
+            ),
+            icon: const Icon(Icons.logout_rounded),
+            label: Text(
+              "Log out",
+              style: Theme.of(
+                context,
+              ).textTheme.titleSmall?.copyWith(fontWeight: FontWeight.w600),
+            ),
+          ),
         ),
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -223,8 +332,6 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
       color: const Color(0xFF0033AD),
     ),
   ];
-
-  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -594,11 +701,16 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
         elevation: 0,
         height: 70,
         labelBehavior: NavigationDestinationLabelBehavior.onlyShowSelected,
-        selectedIndex: _selectedIndex,
+        // selectedIndex: _selectedIndex,
         onDestinationSelected: (index) {
           setState(() {
-            _selectedIndex = index;
-            // _drawerController.setPage(_drawerController.items[index].page);
+            // _selectedIndex = index;
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const HomeScreen2(),
+              ), // Placeholder
+            );
           });
         },
         destinations: const [
