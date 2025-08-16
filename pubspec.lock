@@ -139,6 +139,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.1"
+  kf_drawer:
+    dependency: "direct main"
+    description:
+      name: kf_drawer
+      sha256: "766f844ac154bc9efbb7f4555398297125ddc7fe9e31e66166425b934e522a75"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   leak_tracker:
     dependency: transitive
     description:
